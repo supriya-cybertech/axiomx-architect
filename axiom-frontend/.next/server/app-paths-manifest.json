@@ -1,0 +1,9 @@
+{
+  "/page": "app/page.js",
+  "/radar/page": "app/radar/page.js",
+  "/ai-agent/page": "app/ai-agent/page.js",
+  "/simulation/page": "app/simulation/page.js",
+  "/risk-engine/page": "app/risk-engine/page.js",
+  "/metrics/page": "app/metrics/page.js",
+  "/alerts/page": "app/alerts/page.js"
+}

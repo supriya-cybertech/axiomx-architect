@@ -1,0 +1,11 @@
+fastapi
+uvicorn
+numpy
+scipy
+scikit-learn
+sqlalchemy
+psycopg2-binary
+redis
+httpx
+alembic
+pytest
