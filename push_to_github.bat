@@ -1,46 +1,60 @@
 @echo off
 echo ==================================================
-echo   AXIOM // X - GITHUB UPLOAD TOOL
+echo   AXIOM // X - SMARTER GITHUB UPLOADER
 echo ==================================================
 echo.
 
-:: Initialize git if not already
+:: Check if Git is installed
+where git >nul 2>nul
+if %ERRORLEVEL% neq 0 (
+    echo [ERROR] Git is not installed or not in your PATH.
+    echo Please install Git from: https://git-scm.com/downloads
+    echo.
+    pause
+    exit /b
+)
+
+:: Initialize Git
 if not exist ".git" (
-    echo Initializing local Git repository...
+    echo [1/4] Initializing Git...
     git init
 )
 
-:: Set remote URL
-echo Setting remote to: https://github.com/supriya-cybertech/axiomx-architect.git
-git remote remove origin 2>nul
-git remote add origin https://github.com/supriya-cybertech/axiomx-architect.git
+:: Add Remote
+git remote add origin https://github.com/supriya-cybertech/axiomx-architect.git 2>nul
+git remote set-url origin https://github.com/supriya-cybertech/axiomx-architect.git
 
-:: Add files
-echo Adding files to repository (respecting .gitignore)...
+:: Add and Commit
+echo [2/4] Adding files (ignoring node_modules)...
 git add .
-
-:: Commit
-echo Committing initial AXIOM // X release...
-git commit -m "Initial professional release of AXIOM // X Command Center"
-
-:: Branch
-echo Setting default branch to main...
+echo [3/4] Creating professional commit...
+git commit -m "Final professional AXIOM // X HUD release" 2>nul
 git branch -M main
 
 :: Push
 echo.
 echo ==================================================
-echo   READY TO PUSH
+echo   STEP [4/4]: PUSHING TO GITHUB
 echo ==================================================
-echo   Please ensure you have authenticated with GitHub.
-echo   If browser pops up, please follow the login instructions.
+echo.
+echo   A GITHUB LOGIN WINDOW MAY POP UP. 
+echo   Please log in or click "Authorize".
 echo.
 pause
 
-git push -u origin main
+git push -u origin main --force
+
+if %ERRORLEVEL% neq 0 (
+    echo.
+    echo [!!! ERROR !!!] The push failed. 
+    echo Common fixes:
+    echo 1. Check if you typed the URL correctly.
+    echo 2. Make sure you have permission to push to this repo.
+    echo 3. Check your internet connection.
+) else (
+    echo.
+    echo [SUCCESS] Your project is now live on GitHub!
+)
 
 echo.
-echo ==================================================
-echo   UPLOAD COMPLETE
-echo ==================================================
 pause
