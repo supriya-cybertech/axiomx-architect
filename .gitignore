@@ -1,52 +1,62 @@
-# Dependencies
+# ─── Dependencies ────────────────────────────────
 node_modules/
 .pnp
 .pnp.js
 
-# Testing
-/coverage
-
-# Next.js
+# ─── Next.js ─────────────────────────────────────
 .next/
-**/ .next/
 out/
-
-# Production
 build/
+
+# ─── Production ──────────────────────────────────
 dist/
 
-# Misc
-.DS_Store
-*.pem
+# ─── Testing ─────────────────────────────────────
+/coverage
 
-# Env
+# ─── Environment Variables ───────────────────────
 .env
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
 
-# Vericel
+# ─── Vercel ──────────────────────────────────────
 .vercel
 
-# TypeScript
+# ─── TypeScript ──────────────────────────────────
 *.tsbuildinfo
 next-env.d.ts
 
-# Python
+# ─── Python ──────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 venv/
-.env
-.venv
+.venv/
+env/
 pip-log.txt
-pip-delete-this-directory.txt
 
-# ONNX
+# ─── ONNX / ML Models ────────────────────────────
 *.onnx
+*.pt
+*.pth
 
-# Local artifacts
-/tmp/
+# ─── OS / IDE ─────────────────────────────────────
+.DS_Store
+*.pem
+Thumbs.db
 .vscode/
 .idea/
+
+# ─── Misc ────────────────────────────────────────
+/tmp/
+*.log
+```
+
+---
+
+**I spotted the bug in your original file:**
+```
+**/ .next/    ← ❌ there is a SPACE before .next
