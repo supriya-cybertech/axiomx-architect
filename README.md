@@ -6,7 +6,6 @@
 
 <!-- BADGES ROW 1 -->
 ![Status](https://img.shields.io/badge/STATUS-UPLINK%20ACTIVE-00d4ff?style=for-the-badge&logo=satellite&logoColor=white&labelColor=010810)
-![AMD](https://img.shields.io/badge/AMD-SLINGSHOT%20POWERED-ED1C24?style=for-the-badge&logo=amd&logoColor=white&labelColor=010810)
 ![NASA](https://img.shields.io/badge/NASA-JPL%20NeoWs%20API-0B3D91?style=for-the-badge&logo=nasa&logoColor=white&labelColor=010810)
 ![License](https://img.shields.io/badge/LICENSE-MIT-39ff14?style=for-the-badge&logoColor=white&labelColor=010810)
 
